@@ -1,6 +1,6 @@
 # Neo Tools Command Line Interface (CLI)
 
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP/devops-docker-neo-cli)](https://api.reuse.software/info/github.com/SAP/devops-docker-neo-cli)
+[![REUSE status](https://api.reuse.software/badge/github.com/slydew/devops-docker-neo-cli)](https://api.reuse.software/info/github.com/slydew/devops-docker-neo-cli)
 
 This [_Dockerfile_](https://docs.docker.com/engine/reference/builder/) can be used in _Continuous Delivery_ (CD) pipelines for SAP development projects.
 The image is optimized for use with project ["Piper"](https://github.com/SAP/jenkins-library) on [Jenkins](https://jenkins.io/).
@@ -20,7 +20,7 @@ This image is intended to be used in Jenkins pipelines.
 This image is published to Docker Hub and can be pulled via the command
 
 ```
-docker pull ppiper/neo-cli
+docker pull ppiper/neo-cli-git
 ```
 
 ## Build
@@ -28,7 +28,7 @@ docker pull ppiper/neo-cli
 To build this image locally, open a terminal in the directory of the Dockerfile an run
 
 ```
-docker build -t ppiper/neo-cli .
+docker build -t ppiper/neo-cli-git .
 ```
 
 ## Usage
@@ -38,7 +38,8 @@ Recommended usage of this image is via [`neoDeploy`](https://sap.github.io/jenki
 For using the `neo.sh` tool via this image, it can be invoked like in this command
 
 ```
-docker run ppiper/neo-cli neo.sh help
+docker run ppiper/neo-cli-git neo.sh help
+docker run ppiper/neo-cli-git git help
 ```
 
 ## Licensing
