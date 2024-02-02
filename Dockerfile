@@ -6,8 +6,7 @@ LABEL org.opencontainers.image.licenses=Apache-2.0
 
 ARG NEO_SDK_VERSION=1.163.6
 
-RUN  apt-get update && \
-     apt-get install -y git && \
+RUN  apk add --no-cache git && \
      apk add --no-cache bash && \
      mvn --batch-mode com.sap.cloud:neo-javaee7-wp-maven-plugin:${NEO_SDK_VERSION}:install-sdk -DsdkInstallPath=sdk -Dincludes=tools/**,license/**,sdk.version && \
      chmod -R 777 sdk && \
