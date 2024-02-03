@@ -12,7 +12,7 @@ WORKDIR /app
 
 # Create a dedicated user
 RUN adduser -D ${APP_USER}
-USER ${APP_USER}:${APP_USER}
+# USER ${APP_USER}:${APP_USER}
 
 RUN  apk add --no-cache git && \
      apk add --no-cache bash && \
