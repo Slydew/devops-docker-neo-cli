@@ -24,7 +24,7 @@ jobs:
           fi
           echo "PIPER_version=$NEXT_VERSION" >> $GITHUB_ENV
       - name: Build and push
-        run: 
+        run: |
           echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
           echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ secrets.CR_USER }} --password-stdin
           docker build -t slydew/neo-cli-git:${{ env.PIPER_version }} .
