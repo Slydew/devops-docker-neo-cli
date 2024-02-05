@@ -29,7 +29,7 @@ jobs:
           echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ secrets.CR_USER }} --password-stdin
           docker build -t slydew/neo-cli-git:${{ env.PIPER_version }} .
           docker tag slydew/neo-cli-git:${{ env.PIPER_version }} ghcr.io/slydew/ppiper-neo-cli-git:${{ env.PIPER_version }}
-          docker push slydew/neo-cli-git:latest
+          docker push slydew/neo-cli:${{ env.PIPER_version }}
           docker push ghcr.io/slydew/ppiper-neo-cli-git:${{ env.PIPER_version }}
       - uses: SAP/project-piper-action@master
         with:
