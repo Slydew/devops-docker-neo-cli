@@ -5,13 +5,13 @@ LABEL org.opencontainers.image.description="An image for the SAP neo cli with gi
 LABEL org.opencontainers.image.licenses=Apache-2.0
 
 ARG NEO_SDK_VERSION=1.163.6
-ARG APP_USER=slydew
+# ARG APP_USER=slydew
 
 # Directory
-WORKDIR /app
+# WORKDIR /app
 
 # Create a dedicated user
-RUN adduser -D ${APP_USER}
+# RUN adduser -D ${APP_USER}
 # USER ${APP_USER}:${APP_USER}
 
 RUN  apk add --no-cache git && \
